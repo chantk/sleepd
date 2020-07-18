@@ -23,3 +23,7 @@ preserve_perms() {
 }
 
 preserve_perms etc/rc.d/rc.sleepd.new
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
