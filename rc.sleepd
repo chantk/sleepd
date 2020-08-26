@@ -1,16 +1,11 @@
 #!/bin/sh
 
 # /etc/rc.d/rc.sleepd
-<<<<<<< HEAD
 # Start/stop/restart the sleepd daemon
-=======
-# Start/stop/restart the Wicd daemon
->>>>>>> master
 
 PIDFILE="/var/run/sleepd.pid"
 DAEMON="/usr/sbin/sleepd"
 
-<<<<<<< HEAD
 . /etc/sleepd.conf
 
 # Define start and stop functions
@@ -31,27 +26,11 @@ sleepd_start() {
       echo "ERROR: For more verbosity, run \"$DAEMON -n -v\" manually."
       echo "ERROR: Exiting..."
     fi
-=======
-# Define start and stop functions
-
-sleepd_start() {
-  if [ -e $PIDFILE ]; then
-    echo "sleepd appears to already be running."
-    echo "If this is not the case, then remove "
-    echo "$PIDFILE and try again..."
-    exit 1
-  else
-    echo "Starting sleepd: $DAEMON &"
-    sleepd 2>/dev/null 1>&2 &
->>>>>>> master
   fi
 }
 
 sleepd_force_stop() {
-<<<<<<< HEAD
   [ $UID -eq 0 ] || exit 4
-=======
->>>>>>> master
   echo "Force stopping sleepd..."
   if [ -e $PIDFILE ]; then
     kill $(cat $PIDFILE) 2>/dev/null
@@ -62,10 +41,7 @@ sleepd_force_stop() {
 }
 
 sleepd_stop() {
-<<<<<<< HEAD
   [ $UID -eq 0 ] || exit 4
-=======
->>>>>>> master
   echo "Stopping sleepd..."
   if [ -e $PIDFILE ]; then
     kill $(cat $PIDFILE) 2>/dev/null
@@ -77,11 +53,7 @@ sleepd_status() {
   sleepctl status
 }
 
-<<<<<<< HEAD
 # See how we were called and take appropriate action
-=======
-# See how we were called and take appropriate action	
->>>>>>> master
 
 case $1 in
   start)
@@ -101,15 +73,7 @@ case $1 in
     sleepd_status
    ;;
   *)
-<<<<<<< HEAD
     echo "Usage: $0 {start|stop|force_stop|restart|status}"
     exit 1
    ;;
 esac
-=======
-    echo "Usage: $0 {start|stop|restart|status}"
-    exit 1
-   ;;
-esac
-
->>>>>>> master

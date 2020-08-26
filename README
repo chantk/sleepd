@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 sleepd is a daemon to to put a laptop to sleep if it is not
 being used or if the battery is low.
 
@@ -13,19 +12,3 @@ You should then add the following to /etc/rc.d/rc.local_shutdown.
 if [ -x /etc/rc.d/rc.sleepd ]; then
   /etc/rc.d/rc.sleepd stop
 fi
-=======
-You'll need to add the following lines to /etc/rc.d/rc.local. Alternatively, add them to /etc/rc.d/rc.M, after the acpid section:
-
-	# Start sleepd
-	if [ -x /etc/rc.d/rc.sleepd ]; then
-	  /etc/rc.d/rc.sleepd start
-	fi
-
-You should then add the following to /etc/rc.d/rc.local_shutdown. If you added the above section to /etc/rc.d/rc.M, add the following to /etc/rc.d/rc.K and /etc/rc.d/rc.6 just before acpid:
-
-	# Stop sleepd
-	if [ -x /etc/rc.d/rc.sleepd ]; then
-	  /etc/rc.d/rc.sleepd stop
-	fi
->>>>>>> master
-
